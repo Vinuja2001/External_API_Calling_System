@@ -12,7 +12,7 @@ import java.util.List;
 public class ExternalServiceImpl {
     static final String externalUrl = "http://universities.hipolabs.com/search?country=%s";
 
-    public List<University> getFromApi(String country) {//check to get onther way
+    public List<University> getFromApi(String country) {
         String apiUrl = String.format(externalUrl, country);
         RestTemplate restTemplate = new RestTemplate();
         University[] universities = restTemplate.getForObject(apiUrl, University[].class);
